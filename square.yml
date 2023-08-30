@@ -1,3 +1,5 @@
+InstallerUrl: https://artifactory.ubisoft.org/generic/UbiDirStat/UbiDirStatInstaller/UbiDirStatInstaller-[RELEASE].exe
+
 UpdateDependencies:
   Origin: All
   Enabled: true

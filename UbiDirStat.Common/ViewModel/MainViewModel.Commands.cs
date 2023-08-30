@@ -110,7 +110,7 @@ namespace WinDirStat.Net.ViewModel {
 			return IsOpen && SelectedFiles.Count > 0 && !SelectedFiles.Any(f => !f.Model.IsFileType && !f.Model.IsContainerType);
 		}
 		private bool CanExecuteEmptyRecycleBin() {
-			return allRecycleBinInfo.ItemCount != 0 && allRecycleBinInfo.Size != 0;
+			return allRecycleBinInfo is not null && allRecycleBinInfo.ItemCount != 0 && allRecycleBinInfo.Size != 0;
 		}
 		private bool CanExecuteElevate() {
 			return !OS.IsElevated;

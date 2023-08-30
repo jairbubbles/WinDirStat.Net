@@ -6,20 +6,10 @@
 		<LangVersion>latest</LangVersion>
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DefineConstants>TRACE;DEBUG;WINDOWS;WPF</DefineConstants>
-		<DebugType>full</DebugType>
-		<DebugSymbols>true</DebugSymbols>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<DefineConstants>TRACE;WINDOWS;WPF</DefineConstants>
-	</PropertyGroup>
 	<!-- NuGet References -->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Toolkit.HighPerformance" Version="7.1.2" />
 		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
-		<PackageReference Include="WriteableBitmapEx" Version="1.6.8" />
-		<PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.4" />
 	</ItemGroup>
 	<!-- Project References -->
 	<ItemGroup>

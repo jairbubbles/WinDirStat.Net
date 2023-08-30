@@ -328,3 +328,8 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# TeaBox
+.teabox/
+TeaBox.*.csproj
+TeaBox.*.sln

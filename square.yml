@@ -1,0 +1,24 @@
+UpdateDependencies:
+  Origin: All
+  Enabled: true
+  Schedule: Weekly
+  AutoAccept: true
+
+AutoTag:
+  Enabled: true
+  Interval: 0 17 * * *
+
+AutoAssign:
+  Enabled: true
+  Source: CodeOwners
+  Mode: RoundRobin
+
+SmartRetry:
+  RetryCount: 2
+  TriggerNightly: true
+  NightlyBuildCount: 1
+  MaxConcurrentNightlyBuildCount: 1
+  
+AutoBadges:
+  Enabled: true
+

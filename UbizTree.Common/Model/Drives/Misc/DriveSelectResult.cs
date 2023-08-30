@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using WinDirStat.Net.Services;
 
 namespace WinDirStat.Net.Model.Drives {
@@ -50,7 +51,7 @@ namespace WinDirStat.Net.Model.Drives {
 		/// <returns>Returns the paths of the result.</returns>
 		public string[] GetResultPaths() {
 			if (Mode == DriveSelectMode.All) {
-				return scanning.ScanDriveNames();
+				return scanning.Drives.Select(d => d.Name).ToArray();
 			}
 			else {
 				return selectedPaths;

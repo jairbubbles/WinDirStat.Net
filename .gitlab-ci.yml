@@ -1,0 +1,18 @@
+variables:
+  SQUARE_OBSERVABILITY: "true"
+
+default:
+  interruptible: true
+  tags:
+    - square_windows
+
+build_and_publish:
+  stage: build
+  script:
+    - .\build\TeaBox.com Build
+    - .\build\TeaBox.com PublishNugetPackage -ProjectPath:UbizTree/UbizTree.csproj
+    - .\build\TeaBox.com GenerateFacades -ProjectPath:UbizTree/UbizTree.csproj -DisplayUpdateWindow:true -Housekeep:true
+    - .\build\TeaBox.com PublishFacades
+  artifacts:
+    untracked: true
+    expire_in: 1 hour

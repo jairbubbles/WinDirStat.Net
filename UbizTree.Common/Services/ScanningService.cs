@@ -700,29 +700,20 @@ namespace WinDirStat.Net.Services {
         /// <summary>Scans and returns all valid drive items.</summary>
         /// 
         /// <returns>All valid drive items.</returns>
-        public DriveItem[] ScanDrives() {
-            List<DriveItem> drives = new List<DriveItem>();
-            DriveInfo[] driveInfos = DriveInfo.GetDrives();
-            for (int i = 0; i < driveInfos.Length; i++) {
-                DriveInfo driveInfo = driveInfos[i];
-                if (IsDriveValid(driveInfo))
-                    drives.Add(new DriveItem(driveInfo));
-            }
-            return drives.ToArray();
-        }
+        public async IAsyncEnumerable<DriveItem> ScanDrivesAsync() {
+            foreach (var driveInfo in DriveInfo.GetDrives())
+            {
+                var task = Task.Run(() => {
+                    if (IsDriveValid(driveInfo))
+                        return new DriveItem(driveInfo);
 
-        /// <summary>Scans and returns all valid drive names.</summary>
-        /// 
-        /// <returns>All valid drive names.</returns>
-        public string[] ScanDriveNames() {
-            List<string> paths = new List<string>();
-            DriveInfo[] driveInfos = DriveInfo.GetDrives();
-            for (int i = 0; i < driveInfos.Length; i++) {
-                DriveInfo driveInfo = driveInfos[i];
-                if (IsDriveValid(driveInfo))
-                    paths.Add(driveInfo.Name);
+                    return null;
+                });
+
+                if (await Task.WhenAny(task, Task.Delay(100)) == task && task.Result is { } driveItem) {
+                    yield return driveItem;
+                }
             }
-            return paths.ToArray();
         }
 
         /// <summary>Gets if the drive is valid for use.</summary>

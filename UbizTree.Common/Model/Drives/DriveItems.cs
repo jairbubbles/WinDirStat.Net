@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using WinDirStat.Net.Services;
 using WinDirStat.Net.Utils;
 
@@ -30,16 +31,18 @@ namespace WinDirStat.Net.Model.Drives {
 		#region Refresh
 
 		/// <summary>Refreshes the drive list.</summary>
-		public void Refresh() {
+		public async Task RefreshAsync() {
 			if (drives.Count > 0) {
-				List<DriveItem> oldItems = drives.GetFullRange();
 				drives.Clear();
 				OnPropertyChanged(nameof(Count));
-				RaiseCollectionChanged(NotifyCollectionChangedAction.Remove, oldItems, 0);
+				RaiseCollectionChanged(NotifyCollectionChangedAction.Reset);
 			}
-			drives.AddRange(scanning.ScanDrives());
-			drives.Sort();
-			RaiseCollectionChanged(NotifyCollectionChangedAction.Add, drives.GetFullRange(), 0);
+
+            await foreach (var drive in scanning.ScanDrivesAsync()) {
+                drives.Add(drive);
+            }
+            drives.Sort();
+            RaiseCollectionChanged(NotifyCollectionChangedAction.Reset);
 		}
 
 		#endregion

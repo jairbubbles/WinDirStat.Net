@@ -9,9 +9,9 @@ using WinDirStat.Net.ViewModel.Drives;
 namespace WinDirStat.Net.ViewModel {
 	partial class DriveSelectViewModel {
 
-		public void Loaded() {
+		public async void Loaded() {
 			SelectedDrives.Clear();
-			Drives.Model.Refresh();
+			await Drives.Model.RefreshAsync();
 			Mode = Settings.DriveSelectMode;
 			FolderPath = Settings.SelectedFolderPath;
 			var drivesToSelect = Drives.Where(d => Settings.SelectedDrives.Any(n => d.Name == n));

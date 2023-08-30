@@ -74,9 +74,9 @@ namespace WinDirStat.Net.Wpf.Commands {
 
         public void Execute(object parameter = null) => command.Execute(parameter);
 
-        public bool CanExecute(T? parameter) => command.CanExecute(parameter);
+        public bool CanExecute(T parameter) => command.CanExecute(parameter);
 
-        public void Execute(T? parameter) => command.Execute(parameter);
+        public void Execute(T parameter) => command.Execute(parameter);
 
         #endregion
 

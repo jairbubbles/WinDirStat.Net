@@ -10,7 +10,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         DataContext="{Binding Configure, Source={StaticResource Locator}}"
-        Title="{Binding Title}" Height="500" Width="800" SourceInitialized="OnSourceInitialized" Loaded="OnLoaded" Icon="/UbizTree;component/App.ico" WindowStartupLocation="CenterOwner"
+        Title="{Binding Title}" Height="500" Width="800" SourceInitialized="OnSourceInitialized" Loaded="OnLoaded" Icon="/UbiDirStat;component/App.ico" WindowStartupLocation="CenterOwner"
         Background="#FFF0F0F0" SnapsToDevicePixels="True" UseLayoutRounding="True" ShowInTaskbar="False">
   <Window.Resources>
     <ResourceDictionary>

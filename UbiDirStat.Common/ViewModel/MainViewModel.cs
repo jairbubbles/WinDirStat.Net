@@ -115,7 +115,7 @@ namespace WinDirStat.Net.ViewModel {
         /// <summary>Gets the title to display for the window.</summary>
         public override string Title {
             get {
-                string title = "UbizTree";
+                string title = "UbiDirStat";
                 if (Scanning.ProgressState != ScanProgressState.NotStarted) {
                     var paths = Scanning.RootPaths.Select(p => PathUtils.TrimSeparatorEnd(p));
                     title = $"{string.Join("|", paths)} - {title}";

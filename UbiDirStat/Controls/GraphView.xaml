@@ -27,7 +27,7 @@
 
     <!--<Rectangle Visibility="{Binding Path=IsRendering, Converter={conv:CollapsedWhenFalse}, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/UbizTree;component/Resources/DimmedGraph.png" Stretch="None" TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,4,4"/>
+                <ImageBrush ImageSource="/UbiDirStat;component/Resources/DimmedGraph.png" Stretch="None" TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,4,4"/>
             </Rectangle.Fill>
         </Rectangle>-->
   </Grid>

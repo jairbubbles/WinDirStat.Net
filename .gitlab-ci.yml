@@ -10,9 +10,13 @@ build_and_publish:
   stage: build
   script:
     - .\build\TeaBox.com Build
-    - .\build\TeaBox.com PublishNugetPackage -ProjectPath:UbizTree/UbizTree.csproj
-    - .\build\TeaBox.com GenerateFacades -ProjectPath:UbizTree/UbizTree.csproj -DisplayUpdateWindow:true -Housekeep:true
-    - .\build\TeaBox.com PublishFacades
-  artifacts:
-    untracked: true
-    expire_in: 1 hour
+    - .\build\TeaBox.com PublishNugetPackage -ProjectPath:UbiDirStat/UbiDirStat.csproj
+
+publish_installer:
+  stage: deploy
+  needs: [ "build_and_publish"]
+  script:
+    - .\build\TeaBox.com GenerateFacadeInstaller -ExeFilterRegex:UbiDirStat\.exe$ -RunMode:SeparateProcess -PackageName:UbiDirStat -PackageVersion:latest -OutputFolder:GeneratedInstaller -Housekeep:true -DisplayUpdateWindow:true
+    - .\build\TeaBox.com PublishGenericFile -FilePath:GeneratedInstaller\UbiDirStatInstaller.exe
+  only:
+    - tags

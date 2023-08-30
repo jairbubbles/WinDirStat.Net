@@ -82,7 +82,7 @@ namespace WinDirStat.Net.ViewModel {
 		#region Override Properties
 
 		/// <summary>Gets the title to display for the window.</summary>
-		public override string Title => "UbizTree - Drive Select";
+		public override string Title => "UbiDirStat - Drive Select";
 
 		#endregion
 

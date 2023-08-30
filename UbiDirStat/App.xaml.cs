@@ -41,7 +41,7 @@ namespace WinDirStat.Net.Wpf {
         ///  Called to avoid referencing assemblies before the assembly resolver can be added.
         /// </summary>
         private void Initialize() {
-            ErrorMessageBox.ProgramName = "UbizTree";
+            ErrorMessageBox.ProgramName = "UbiDirStat";
             ErrorMessageBox.HyperlinkName = "GitHub Page";
             ErrorMessageBox.HyperlinkUri = new Uri(@"https://github.com/trigger-death/WinDirStat.Net");
             ErrorMessageBox.ErrorIcon = new BitmapImage(new Uri("pack://application:,,,/Resources/App.ico"));

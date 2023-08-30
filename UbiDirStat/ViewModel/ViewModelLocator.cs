@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:UbizTree"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:UbiDirStat"
                            x:Key="Locator" />
   </Application.Resources>
   

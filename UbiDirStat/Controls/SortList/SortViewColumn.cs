@@ -101,7 +101,7 @@ namespace WinDirStat.Net.Wpf.Controls.SortList {
 			get {
 				if (resourceDictionary == null) {
 					resourceDictionary = new ResourceDictionary();
-					resourceDictionary.Source = new Uri("/UbizTree;component/Themes/Generic.xaml", UriKind.RelativeOrAbsolute);
+					resourceDictionary.Source = new Uri("/UbiDirStat;component/Themes/Generic.xaml", UriKind.RelativeOrAbsolute);
 				}
 				return resourceDictionary;
 			}

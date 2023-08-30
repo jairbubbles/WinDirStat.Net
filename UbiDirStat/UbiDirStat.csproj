@@ -15,7 +15,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\FunctionalFun.UI.Behaviours\FunctionalFun.UI.Behaviors.csproj" />
-		<ProjectReference Include="..\UbizTree.Common\UbizTree.Common.csproj" />
+		<ProjectReference Include="..\UbiDirStat.Common\UbiDirStat.Common.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<Resource Include="Resources\Icons\*.png" />

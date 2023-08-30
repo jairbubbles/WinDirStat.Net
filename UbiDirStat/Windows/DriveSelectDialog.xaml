@@ -10,7 +10,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         DataContext="{Binding DriveSelect, Source={StaticResource Locator}}"
-        Title="{Binding Title}" Height="313" Width="435" SourceInitialized="OnSourceInitialized" Loaded="OnLoaded" Icon="/UbizTree;component/Resources/App.ico" WindowStartupLocation="CenterOwner"
+        Title="{Binding Title}" Height="313" Width="435" SourceInitialized="OnSourceInitialized" Loaded="OnLoaded" Icon="/UbiDirStat;component/Resources/App.ico" WindowStartupLocation="CenterOwner"
         Background="#FFF0F0F0" SnapsToDevicePixels="True" UseLayoutRounding="True" ShowInTaskbar="False">
   <Window.Resources>
     <ResourceDictionary>

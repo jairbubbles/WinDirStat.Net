@@ -21,7 +21,7 @@ namespace WinDirStat.Net.ViewModel {
 		#region Abstract Properties
 
 		/// <summary>Gets the title to display for the window.</summary>
-		public virtual string Title => "UbizTree";
+		public virtual string Title => "UbiDirStat";
 
 		#endregion
 
